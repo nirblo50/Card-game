@@ -1,5 +1,7 @@
+import random
 import socket
 import select
+from game import Game
 
 MAX_MSG_LENGTH = 1024
 SERVER_IP = "0.0.0.0"
@@ -19,28 +21,92 @@ def setup_server():
     return server_socket
 
 
-def send_all_massages(ready_to_write, messages_to_send):
+def send_all_massages(ready_to_write):
     """
     Go over all the massages that needed to be sent to the clients
     :param ready_to_write: The list of clients to send massage
-    :param messages_to_send: The massage itself
     """
     for message in messages_to_send:
         current_socket, data = message
         if current_socket in ready_to_write:
-            current_socket.send(data.encode())
+            game_id = client_to_games[current_socket]
+            # go over all the players in the same game with who sent the msg
+            for player in games[game_id].players:
+                msg = str(player.getpeername()) + ": " + data
+                player.send(msg.encode())
+                print(games[game_id].players_num())
             messages_to_send.remove(message)
 
 
-def disconnect_client(connected_clients, socket_to_remove, client_address):
+def disconnect_client(socket_to_remove, client_address):
+    """
+    Disconnect a client from the server
+    :param socket_to_remove: The client to remove
+    :param client_address: The client's address
+    """
     print(client_address, "Connection closed", )
     connected_clients.remove(socket_to_remove)
+    client_game_id = client_to_games[socket_to_remove]
+    games[client_game_id].remove_player(socket_to_remove)
+    client_to_games.pop(socket_to_remove)
     socket_to_remove.close()
+    close_empty_game(client_game_id)
+
+
+def close_empty_game(game_id):
+    """
+    Close a game if there are no players in it
+    :param game_id: the id of the game
+    """
+    if games[game_id].players_num() == 0:
+        games.pop(game_id)
+        print(f"~ Game {game_id} has been closed ~")
+
+
+def randomize_game_id() -> int:
+    """
+    :return: New original game id
+    """
+    game_id = random.randint(1000, 9999)
+    while game_id in games.keys():
+        game_id = random.randint(1000, 9999)
+    return game_id
+
+
+def handle_new_client(client_socket, client_address):
+    """
+    Things to do when a new client is connected to the server:
+    add it to an existing / new game
+    :param client_socket: The new client socket
+    :param client_address: The new client address
+    """
+    connected_clients.append(client_socket)
+    for game_id, game in games.items():
+        if not game.is_full():
+            client_to_games[client_socket] = game_id
+            game.add_player(client_socket)
+            print("New client joined:", client_address, "game_id:", game_id)
+            return
+
+    # No game is available for connecting - Create a new one and add player
+    game_id = randomize_game_id()
+    client_to_games[client_socket] = game_id
+    games[game_id] = Game(game_id)
+    games[game_id].add_player(client_socket)
+    print("New client joined:", client_address, "game_id:", game_id)
+
+
+def handle_player_action(current_socket, received_data):
+    """
+    Receive data/action from client and pass it to the game object
+    :param current_socket: The player that sent the data
+    :param received_data: The data that was sent
+    """
+    game_id = client_to_games[current_socket]
+    games[game_id].player_action(current_socket, received_data)
 
 
 def main_loop():
-    connected_clients = []  # List of all the clients connected to the Server
-    messages_to_send = []  # List of all the messages to send to the clients
     server_socket = setup_server()
 
     while True:
@@ -51,27 +117,28 @@ def main_loop():
         for current_socket in ready_to_read:
             if current_socket is server_socket:  # New client to connect
                 client_socket, client_address = current_socket.accept()
-                print("New client joined:", client_address)
-                connected_clients.append(client_socket)
+                handle_new_client(client_socket, client_address)
 
             else:  # Connected client sent new data
                 try:  # If the client has been disconnected an error will pop
                     data = current_socket.recv(MAX_MSG_LENGTH).decode()
-
                     if data == "":  # Client wish to disconnect
-                        disconnect_client(connected_clients, current_socket,
-                                          client_address)
+                        disconnect_client(current_socket, client_address)
 
                     else:  # Client has sent data
-                        print(client_address, ":", data)
-                        send_message = "**" + str(data) + "**"
-                        messages_to_send.append((current_socket, send_message))
+                        print(client_address, "has sent:", data)
+                        handle_player_action(current_socket, data)
+                        messages_to_send.append((current_socket, data))
 
                 except WindowsError:  # Client probably suddenly disconnected
-                    disconnect_client(connected_clients, current_socket,
-                                      client_address)
+                    disconnect_client(current_socket, client_address)
 
-        send_all_massages(ready_to_write,messages_to_send)
+        send_all_massages(ready_to_write)
+
 
 if __name__ == '__main__':
+    connected_clients: list[socket] = []  # All clients connected to the Server
+    messages_to_send: list[str] = []  # All the messages to send to the clients
+    games: dict[int, Game] = {}  # Dict of active games
+    client_to_games: dict[socket, int] = {}  # Map each client to game id
     main_loop()

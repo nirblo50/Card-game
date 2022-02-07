@@ -1,6 +1,8 @@
 import socket
 
 #SERVER_IP = socket.gethostbyname(socket.gethostname())
+import time
+
 SERVER_IP = 'localhost'
 PORT = 5555
 
