@@ -26,16 +26,15 @@ def send_all_massages(ready_to_write):
     Go over all the massages that needed to be sent to the clients
     :param ready_to_write: The list of clients to send massage
     """
-    for message in messages_to_send:
-        current_socket, data = message
-        if current_socket in ready_to_write:
-            game_id = client_to_games[current_socket]
-            # go over all the players in the same game with who sent the msg
-            for player in games[game_id].players:
-                msg = str(player.getpeername()) + ": " + data
-                player.send(msg.encode())
-                print(games[game_id].players_num())
-            messages_to_send.remove(message)
+    for client in clients_to_respond:
+        if client in ready_to_write:
+            game_id = client_to_games[client]
+            if games[game_id].has_started():
+                msg = str(games[game_id].get_player_data(client))
+                client.send(msg.encode())
+            else:
+                client.send("game did not start yet".encode())
+        clients_to_respond.remove(client)
 
 
 def disconnect_client(socket_to_remove, client_address):
@@ -86,6 +85,7 @@ def handle_new_client(client_socket, client_address):
             client_to_games[client_socket] = game_id
             game.add_player(client_socket)
             print("New client joined:", client_address, "game_id:", game_id)
+            games[game_id].start()
             return
 
     # No game is available for connecting - Create a new one and add player
@@ -96,14 +96,15 @@ def handle_new_client(client_socket, client_address):
     print("New client joined:", client_address, "game_id:", game_id)
 
 
-def handle_player_action(current_socket, received_data):
+def handle_player_action(player_socket, received_data):
     """
     Receive data/action from client and pass it to the game object
-    :param current_socket: The player that sent the data
+    :param player_socket: The player that sent the data
     :param received_data: The data that was sent
     """
-    game_id = client_to_games[current_socket]
-    games[game_id].player_action(current_socket, received_data)
+    game_id = client_to_games[player_socket]
+    games[game_id].player_make_action(player_socket, received_data)
+    print(games[game_id].get_turn())
 
 
 def main_loop():
@@ -128,7 +129,7 @@ def main_loop():
                     else:  # Client has sent data
                         print(client_address, "has sent:", data)
                         handle_player_action(current_socket, data)
-                        messages_to_send.append((current_socket, data))
+                        clients_to_respond.append(current_socket)
 
                 except WindowsError:  # Client probably suddenly disconnected
                     disconnect_client(current_socket, client_address)
@@ -138,7 +139,7 @@ def main_loop():
 
 if __name__ == '__main__':
     connected_clients: list[socket] = []  # All clients connected to the Server
-    messages_to_send: list[str] = []  # All the messages to send to the clients
+    clients_to_respond: list[socket] = []  # All the clients who need response
     games: dict[int, Game] = {}  # Dict of active games
     client_to_games: dict[socket, int] = {}  # Map each client to game id
     main_loop()

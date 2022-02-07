@@ -1,7 +1,7 @@
 class Player:
     def __init__(self, name, hand):
         self.__name = name
-        self.__hand = hand
+        self.hand = hand
         self.__score = 0
 
     @property
@@ -12,10 +12,10 @@ class Player:
     def score(self):
         return self.__score
 
-    @property
-    def hand(self):
-        return self.__hand
+    # @property
+    # def hand(self):
+    #     return self.__hand
 
     def update_hand(self, hand):
-        self.__hand = hand
+        self.hand = hand
 

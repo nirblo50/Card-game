@@ -51,9 +51,3 @@ class Deck:
     def __iter__(self):
         return iter(self.__deck)
 
-
-if __name__ == '__main__':
-
-    deck = Deck()
-    deck.initialize()
-    deck.shuffle()

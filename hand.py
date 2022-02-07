@@ -15,15 +15,13 @@ class Hand:
         """
         self.__hand.append(card)
 
-    def remove_card(self, card: Card):
+    def remove_card(self, card_index: int):
         """
         Remove a certain card from the hand
         :param card: The card to remove
         """
-        for index, my_card in enumerate(self.__hand):
-            if my_card == card:
-                self.__hand.pop(index)
-                return
+        return self.__hand.pop(card_index)
+
 
     def hand_value(self):
         """
