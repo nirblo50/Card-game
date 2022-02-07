@@ -1,16 +1,35 @@
 import socket
+import pickle
 
-#SERVER_IP = socket.gethostbyname(socket.gethostname())
 SERVER_IP = 'localhost'
 PORT = 5555
+MAX_MSG_LENGTH = 2048
 
-my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-my_socket.connect((SERVER_IP, PORT))
 
-while True:
-    data = input("enter data: ")
-    my_socket.send(data.encode())
-    rec_data = my_socket.recv(1024).decode()
-    print("server: ", rec_data)
+class Client:
+    def __init__(self):
+        self.__my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-my_socket.close()
+    def connect(self):
+        self.__my_socket.connect((SERVER_IP, PORT))
+
+    def send(self, data):
+        self.__my_socket.send(data.encode())
+
+    def receive_data(self):
+        rec_data = pickle.loads(self.__my_socket.recv(MAX_MSG_LENGTH))
+        return rec_data
+
+    def close(self):
+        self.__my_socket.close()
+
+
+if __name__ == '__main__':
+    my_client = Client()
+    my_client.connect()
+    while True:
+        my_data = input("enter: ")
+        my_client.send(my_data)
+        rec = my_client.receive_data()
+        print(rec[0])
+        print(rec[1])

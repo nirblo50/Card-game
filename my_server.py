@@ -1,6 +1,7 @@
 import random
 import socket
 import select
+import pickle
 from game import Game
 
 MAX_MSG_LENGTH = 1024
@@ -26,15 +27,19 @@ def send_all_massages(ready_to_write):
     Go over all the massages that needed to be sent to the clients
     :param ready_to_write: The list of clients to send massage
     """
-    for client in clients_to_respond:
+    for client, data in clients_to_respond:
         if client in ready_to_write:
             game_id = client_to_games[client]
-            if games[game_id].has_started():
-                msg = str(games[game_id].get_player_data(client))
-                client.send(msg.encode())
-            else:
-                client.send("game did not start yet".encode())
-        clients_to_respond.remove(client)
+            if data == "Get":   # Player wants to get game status
+                if games[game_id].has_started():
+                    status = games[game_id].get_player_data(client)
+                    client.send(pickle.dumps(status))
+                else:
+                    client.send(pickle.dumps("game did not start yet"))
+            else:   # Player wants to make an action
+                handle_player_action(client, data)
+
+        clients_to_respond.remove((client, data))
 
 
 def disconnect_client(socket_to_remove, client_address):
@@ -128,8 +133,8 @@ def main_loop():
 
                     else:  # Client has sent data
                         print(client_address, "has sent:", data)
-                        handle_player_action(current_socket, data)
-                        clients_to_respond.append(current_socket)
+                        clients_to_respond.append((current_socket, data))
+                        #handle_player_action(current_socket, data)
 
                 except WindowsError:  # Client probably suddenly disconnected
                     disconnect_client(current_socket, client_address)
@@ -139,7 +144,7 @@ def main_loop():
 
 if __name__ == '__main__':
     connected_clients: list[socket] = []  # All clients connected to the Server
-    clients_to_respond: list[socket] = []  # All the clients who need response
+    clients_to_respond: list[tuple[socket, str]] = []  # All the clients who need response
     games: dict[int, Game] = {}  # Dict of active games
     client_to_games: dict[socket, int] = {}  # Map each client to game id
     main_loop()

@@ -11,8 +11,7 @@ START_CARDS_NUM = 4
 class Game:
     def __init__(self, game_id):
         self.__game_id: int = game_id
-        self.__players: list[
-            Player] = []  # list[(client_socket, client_address)]
+        self.__players: list[Player] = []
         self.__deck: Deck = Deck()
         self.__garbage: list[Card] = []
         self.__turn: int = 0
@@ -20,7 +19,7 @@ class Game:
 
     def start(self):
         """
-        Start the game
+        Starts the game
         """
         self.__has_started = True
         self.__deck.initialize()
@@ -149,7 +148,4 @@ class Game:
 
 
 if __name__ == '__main__':
-    game = Game(1234)
-    game.add_player("Nir")
-    game.add_player("Hadar")
-    game.start()
+    pass
