@@ -16,6 +16,7 @@ class Game:
         self.__garbage: list[Card] = []
         self.__turn: int = 0
         self.__has_started = False
+        self.__can_see_deck_card = False
 
     def start(self):
         """
@@ -54,6 +55,14 @@ class Game:
 
         if len(self.__players) < MIN_PLAYERS:
             self.__has_started = False
+            self.empty_hands()
+
+    def empty_hands(self):
+        """
+        Empty all the player's hands
+        """
+        for player in self.__players:
+            player.hand = Hand()
 
     def player_make_action(self, player_name, action: str):
         """
@@ -63,12 +72,16 @@ class Game:
         :return: Card if needed or None
         """
         player_index = self.__player_name_to_index(player_name)
-        # If This is not this player's turn - do nothing
+        # If This is not this player's turn
         if player_index is not self.__turn:
-            return
+            return self.get_game_status(player_name)
 
-        if action == "show top card from deck":
-            return "Top card", self.__deck.peek_top()
+        elif not self.has_started():
+            return "Game did not start yet"
+
+        elif action == "show top card from deck":
+            self.__can_see_deck_card = True
+            return self.get_game_status(player_name)
 
         elif action.startswith("Throw card from hand"):
             card_index = int(action[-1])
@@ -78,9 +91,11 @@ class Game:
             self.__garbage.append(self.__deck.pop_card())
 
         else:
-            return
+            return self.get_game_status(player_name)
 
+        self.__can_see_deck_card = False
         self.next_turn()
+        return self.get_game_status(player_name)
 
     def take_from_deck_and_throw(self, player_index, card_index):
         """
@@ -114,14 +129,21 @@ class Game:
         if self.__turn >= MAX_PLAYERS:
             self.__turn = 0
 
-    def get_player_data(self, player_name):
+    def get_game_status(self, player_name):
         """
-        Return the current data needed to a player
-        :param player_name: The player's name
-        :return: players_hand(Hand), top_garbage_card(Card)
+        Return a GameStatus object that is consist of:
+        player's hand, enemy_num_cards, garbage_card, deck_card
+        :param player_name: The player to send it's game status
         """
         player_index = self.__player_name_to_index(player_name)
-        return self.__players[player_index].hand, self.garbage_top_card()
+        player_hand = self.__players[player_index].hand
+        enemy_num_cards = START_CARDS_NUM
+        garbage_card = self.garbage_top_card()
+        if self.__can_see_deck_card:
+            deck_card = self.__deck.peek_top()
+        else:
+            deck_card = None
+        return GameStatus(player_hand, enemy_num_cards, garbage_card, deck_card)
 
     @property
     def game_id(self):
@@ -147,5 +169,22 @@ class Game:
         return len(self.__players)
 
 
+class GameStatus:
+    def __init__(self, hand, enemy_num_cards, garbage_card=None, deck_card=None):
+        self.hand = hand
+        self.enemy_num_cards = enemy_num_cards
+        self.garbage_card = garbage_card
+        self.deck_card = deck_card
+
 if __name__ == '__main__':
-    pass
+    game = Game(1234)
+    game.add_player("Nir")
+    print(game.player_make_action("Nir", "Get").hand)
+    game.add_player("Hadar")
+    game.start()
+    print(game.player_make_action("Hadar", "Get").hand)
+    print(game.player_make_action("Nir", "Get").hand)
+    #print(game.player_make_action("Hadar", "Get").hand)
+    #print(game.player_make_action("Nir", "Get").hand)
+    #print(game.player_make_action("Hadar", "Get").hand)
+

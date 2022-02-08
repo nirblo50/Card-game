@@ -31,5 +31,4 @@ if __name__ == '__main__':
         my_data = input("enter: ")
         my_client.send(my_data)
         rec = my_client.receive_data()
-        print(rec[0])
-        print(rec[1])
+        print(rec.hand)

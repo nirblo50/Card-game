@@ -22,7 +22,6 @@ class Hand:
         """
         return self.__hand.pop(card_index)
 
-
     def hand_value(self):
         """
         :return: The sum value of all the cards in the hand
@@ -50,4 +49,8 @@ class Hand:
 
 
 if __name__ == '__main__':
-    pass
+    hand = Hand()
+    hand.add_card(Card("4", "Clubs", "Black"))
+    hand.add_card(Card("5", "Hearts", "Red"))
+    hand.add_card(Card("6", "Clubs", "Black"))
+    hand.add_card(Card("7", "Hearts", "Red"))
