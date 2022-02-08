@@ -22,6 +22,15 @@ class Hand:
         """
         return self.__hand.pop(card_index)
 
+    def replace_card(self, card_index, card):
+        """
+        Replace the card in a given index with another
+        """
+        self.__hand[card_index] = card
+
+    def card_in(self, card_index):
+        return self.__hand[card_index]
+
     def hand_value(self):
         """
         :return: The sum value of all the cards in the hand

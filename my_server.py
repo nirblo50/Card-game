@@ -103,7 +103,6 @@ def send_all_massages(ready_to_write):
             clients_to_respond.remove((client, msg))
 
 
-
 def main_loop():
     server_socket = setup_server()
 
@@ -124,19 +123,17 @@ def main_loop():
                         disconnect_client(current_socket, client_address)
 
                     else:  # Client has sent data
-                        #print(client_address, "has sent:", data)
                         clients_to_respond.append((current_socket, data))
-                        #handle_player_action(current_socket, data)
 
                 except WindowsError:  # Client probably suddenly disconnected
                     disconnect_client(current_socket, client_address)
-
         send_all_massages(ready_to_write)
 
 
 if __name__ == '__main__':
     connected_clients: list[socket] = []  # All clients connected to the Server
-    clients_to_respond: list[tuple[socket, str]] = []  # All the clients who need response
+    clients_to_respond: list[
+        tuple[socket, str]] = []  # All the clients who need response
     games: dict[int, Game] = {}  # Dict of active games
     client_to_games: dict[socket, int] = {}  # Map each client to game id
     main_loop()
