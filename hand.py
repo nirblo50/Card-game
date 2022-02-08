@@ -3,63 +3,59 @@ from functools import reduce
 
 
 class Hand:
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Creates an empty hand
         """
         self.__hand: list[Card] = []
 
-    def add_card(self, card):
+    def add_card(self, card: Card) -> None:
         """
         Adds a card to the hand
         """
         self.__hand.append(card)
 
-    def remove_card(self, card_index: int):
+    def remove_card(self, card_index: int) -> Card:
         """
         Remove a certain card from the hand
-        :param card: The card to remove
+        :param card_index: The index of the card to remove
         """
         return self.__hand.pop(card_index)
 
-    def replace_card(self, card_index, card):
+    def replace_card(self, card_index: int, card: Card) -> None:
         """
         Replace the card in a given index with another
         """
         self.__hand[card_index] = card
 
-    def card_in(self, card_index):
+    def card_in(self, card_index: int) -> Card:
         return self.__hand[card_index]
 
-    def hand_value(self):
+    def hand_value(self) -> int:
         """
         :return: The sum value of all the cards in the hand
         """
         return reduce(lambda x, y: x + y.real_value, self.__hand, 0)
 
     @property
-    def cards(self):
+    def cards(self) -> list[Card]:
         """
         :return: A copy of the cards in the hand
         """
         return self.__hand[:]
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.__hand)
 
-    def __iter__(self):
+    def __iter__(self) -> iter:
         return iter(self.__hand[:])
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.__hand)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.__hand)
 
 
 if __name__ == '__main__':
-    hand = Hand()
-    hand.add_card(Card("4", "Clubs", "Black"))
-    hand.add_card(Card("5", "Hearts", "Red"))
-    hand.add_card(Card("6", "Clubs", "Black"))
-    hand.add_card(Card("7", "Hearts", "Red"))
+    pass

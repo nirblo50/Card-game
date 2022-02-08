@@ -9,7 +9,7 @@ SERVER_IP = "0.0.0.0"
 SERVER_PORT = 5555
 
 
-def setup_server():
+def setup_server() -> socket:
     """
     Setting up the server and start listening for clients
     :return The server socket
@@ -22,7 +22,7 @@ def setup_server():
     return server_socket
 
 
-def disconnect_client(socket_to_remove, client_address):
+def disconnect_client(socket_to_remove: socket, client_address: tuple[str, str]) -> None:
     """
     Disconnect a client from the server
     :param socket_to_remove: The client to remove
@@ -37,7 +37,7 @@ def disconnect_client(socket_to_remove, client_address):
     close_empty_game(client_game_id)
 
 
-def close_empty_game(game_id):
+def close_empty_game(game_id: int) -> None:
     """
     Close a game if there are no players in it
     :param game_id: the id of the game
@@ -57,7 +57,8 @@ def randomize_game_id() -> int:
     return game_id
 
 
-def handle_new_client(client_socket, client_address):
+def handle_new_client(client_socket: socket, client_address: tuple[str, str])\
+        -> None:
     """
     Things to do when a new client is connected to the server:
     add it to an existing / new game
@@ -81,7 +82,7 @@ def handle_new_client(client_socket, client_address):
     print("New client joined:", client_address, "game_id:", game_id)
 
 
-def handle_player_action(player_socket, received_data):
+def handle_player_action(player_socket: socket, received_data: str) -> None:
     """
     Receive data/action from client and pass it to the game object
     :param player_socket: The player that sent the data
@@ -92,7 +93,7 @@ def handle_player_action(player_socket, received_data):
     player_socket.send(pickle.dumps(status))
 
 
-def send_all_massages(ready_to_write):
+def send_all_massages(ready_to_write: list[tuple[socket, str]]) -> None:
     """
     Go over all the massages that needed to be sent to the clients
     :param ready_to_write: The list of clients to send massage
@@ -103,7 +104,7 @@ def send_all_massages(ready_to_write):
             clients_to_respond.remove((client, msg))
 
 
-def main_loop():
+def main_loop() -> None:
     server_socket = setup_server()
 
     while True:

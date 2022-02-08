@@ -2,14 +2,31 @@ from hand import Hand
 from player import Player
 from deck import Deck
 from card import Card
+from typing import Any, Union
+
+
+class GameStatus:
+    def __init__(self, is_turn: int, hand: Hand, enemy_num_cards: int,
+                 asked_to_finish: bool,
+                 garbage_card: Union[None, Card] = None,
+                 deck_card: Union[None, Card] = None) -> None:
+        self.hand = hand
+        self.enemy_num_cards = enemy_num_cards
+        self.garbage_card = garbage_card
+        self.deck_card = deck_card
+        self.asked_to_finish = asked_to_finish
+        self.is_turn = is_turn
+
 
 MAX_PLAYERS = 2
 MIN_PLAYERS = 2
 START_CARDS_NUM = 4
 
+game_status_type = Union[GameStatus, str]
+
 
 class Game:
-    def __init__(self, game_id):
+    def __init__(self, game_id) -> None:
         self.__game_id: int = game_id
         self.__players: list[Player] = []
         self.__deck: Deck = Deck()
@@ -18,7 +35,7 @@ class Game:
         self.__has_started = False
         self.__game_won = False
 
-    def start(self):
+    def start(self) -> None:
         """
         Starts the game
         """
@@ -28,7 +45,7 @@ class Game:
         self.__garbage.append(self.__deck.pop_card())
         self.deal_cards()
 
-    def deal_cards(self):
+    def deal_cards(self) -> None:
         """
         Deal each player the starting cards
         """
@@ -37,7 +54,7 @@ class Game:
                 card = self.__deck.pop_card()
                 player.hand.add_card(card)
 
-    def add_player(self, player_name):
+    def add_player(self, player_name: Any) -> None:
         """
         Add a player to the game
         :param player_name: The name of the new player
@@ -45,7 +62,7 @@ class Game:
         player = Player(player_name, Hand())
         self.__players.append(player)
 
-    def remove_player(self, player_name):
+    def remove_player(self, player_name: Any) -> None:
         """
         Remove a player from the game
         :param player_name: The player to remove
@@ -57,7 +74,7 @@ class Game:
             self.__has_started = False
             self.empty_hands()
 
-    def empty_hands(self):
+    def empty_hands(self) -> None:
         """
         Empty all the player's hands and game data
         """
@@ -66,7 +83,8 @@ class Game:
             player.can_see_deck_card = False
             player.score = 0
 
-    def player_make_action(self, player_name, action: str):
+    def player_make_action(self, player_name: Any,
+                           action: str) -> game_status_type:
         """
         Handles the actions from the player
         :param player_name: The name of the player that did the action
@@ -112,7 +130,8 @@ class Game:
         self.next_turn()
         return self.get_game_status(current_player)
 
-    def take_from_deck_and_throw(self, current_player, card_index):
+    def take_from_deck_and_throw(self, current_player: Any,
+                                 card_index: int) -> None:
         """
         Take the top card from the deck and throw a specific card instead
         :param player_index: The player doing the action
@@ -122,7 +141,7 @@ class Game:
         self.__garbage.append(card_to_throw)
         current_player.hand.replace_card(card_index, self.__deck.pop_card())
 
-    def __player_name_to_index(self, player_name):
+    def __player_name_to_index(self, player_name: Any) -> int:
         """
         :return: The index of the player
         """
@@ -130,13 +149,13 @@ class Game:
             if self.__players[index].name == player_name:
                 return index
 
-    def throw_card(self, card: Card):
+    def throw_card(self, card: Card) -> None:
         """
         Throw a card to the garbage
         """
         self.__garbage.append(card)
 
-    def next_turn(self):
+    def next_turn(self) -> None:
         """
         Continue to the next turn
         """
@@ -146,7 +165,7 @@ class Game:
         if self.__players[self.__turn].asked_to_finish:
             self.__game_won = True
 
-    def check_who_won(self):
+    def check_who_won(self) -> tuple[Player, int]:
         winner = self.__players[0].name
         max_hand = self.__players[0].hand.hand_value()
         for player in self.__players:
@@ -155,7 +174,7 @@ class Game:
                 winner, max_hand = player.name, current_hand_sum
         return winner, max_hand
 
-    def get_game_status(self, current_player):
+    def get_game_status(self, current_player: Player) -> GameStatus:
         """
         Return a GameStatus object that is consist of:
         player's hand, enemy_num_cards, garbage_card, deck_card
@@ -165,61 +184,39 @@ class Game:
         enemy_num_cards = START_CARDS_NUM
         garbage_card = self.garbage_top_card()
         asked_to_finish = current_player.asked_to_finish
-        is_turn = self.__turn == self.__player_name_to_index(current_player.name)
+        is_turn = self.__turn == self.__player_name_to_index(
+            current_player.name)
 
         if current_player.can_see_deck_card == True:
             deck_card = self.__deck.peek_top()
         else:
             deck_card = None
-        return GameStatus(is_turn, player_hand, enemy_num_cards, asked_to_finish, garbage_card, deck_card)
+        return GameStatus(is_turn, player_hand, enemy_num_cards,
+                          asked_to_finish, garbage_card, deck_card)
 
     @property
-    def game_id(self):
+    def game_id(self) -> int:
         return self.__game_id
 
     @property
-    def players(self):
+    def players(self) -> list[Player]:
         return self.__players[:]
 
-    def get_turn(self):
+    def get_turn(self) -> int:
         return self.__turn
 
-    def has_started(self):
+    def has_started(self) -> bool:
         return self.__has_started
 
-    def garbage_top_card(self):
+    def garbage_top_card(self) -> Card:
         return self.__garbage[-1]
 
-    def is_full(self):
+    def is_full(self) -> bool:
         return len(self.__players) == MAX_PLAYERS
 
-    def players_num(self):
+    def players_num(self) -> int:
         return len(self.__players)
 
 
-class GameStatus:
-    def __init__(self, is_turn, hand, enemy_num_cards,asked_to_finish, garbage_card=None, deck_card=None):
-        self.hand = hand
-        self.enemy_num_cards = enemy_num_cards
-        self.garbage_card = garbage_card
-        self.deck_card = deck_card
-        self.asked_to_finish = asked_to_finish
-        self.is_turn = is_turn
-
 if __name__ == '__main__':
-    game = Game(1234)
-    game.add_player("Nir")
-    game.add_player("Hadar")
-    game.start()
-
-    print(game.get_game_status("Nir").hand)
-    print(game.get_game_status("Hadar").hand)
-    print(game.garbage_top_card())
-
-    game.player_make_action("Nir", "Show top card from deck")
-    game.player_make_action("Nir", "Throw card from hand|0")
-
-    print(game.get_game_status("Nir").hand)
-    print(game.get_game_status("Hadar").hand)
-    print(game.garbage_top_card())
-
+    pass
