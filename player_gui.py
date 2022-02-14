@@ -66,7 +66,7 @@ def draw_end_game(text: str) -> None:
     TEXT_LOCATION = (WIDTH // 2 - 100, HEIGHT // 2)
     TEXT_COLOR = (0, 0, 0)
 
-    font = pygame.font.Font('freesansbold.ttf', FONT_SIZE)
+    font = pygame.font.SysFont('arial', FONT_SIZE)
     turn = font.render(text, True, TEXT_COLOR)
     WIN.blit(turn, TEXT_LOCATION)
 
@@ -80,7 +80,7 @@ def draw_turn(game_status: Game_status_type) -> None:
     TEXT_COLOR = (0, 0, 0)
 
     text = "Your turn" if game_status["is_turn"] else "Enemy's turn"
-    font = pygame.font.Font('freesansbold.ttf', FONT_SIZE)
+    font = pygame.font.SysFont('arial', FONT_SIZE)
     turn = font.render(text, True, TEXT_COLOR)
     WIN.blit(turn, TEXT_LOCATION)
 

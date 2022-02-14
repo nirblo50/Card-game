@@ -81,4 +81,4 @@ def enemy_cards_location(num_cards: int) -> List[Tuple[int, int]]:
 
 
 if __name__ == '__main__':
-    pass
+    print(pygame.font.get_fonts())
