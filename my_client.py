@@ -1,9 +1,8 @@
-import socket
-import pickle
+import socket, pickle
 from typing import Union
-from game import GameStatus
+from game import Game_status_type
 
-SERVER_IP = 'localhost'
+SERVER_IP = "192.168.1.155"
 PORT = 5555
 MAX_MSG_LENGTH = 2048
 
@@ -18,7 +17,7 @@ class Client:
     def send(self, data: str) -> None:
         self.__my_socket.send(data.encode())
 
-    def receive_data(self) -> Union[GameStatus, str]:
+    def receive_data(self) -> Game_status_type:
         rec_data = pickle.loads(self.__my_socket.recv(MAX_MSG_LENGTH))
         return rec_data
 

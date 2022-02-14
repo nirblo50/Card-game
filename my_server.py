@@ -1,20 +1,25 @@
-import random
-import socket
-import select
-import pickle
+import random, socket, select, pickle
 from game import Game
+from typing import List, Tuple, Dict
 
 MAX_MSG_LENGTH = 1024
 SERVER_IP = "0.0.0.0"
+SERVER_IP = socket.gethostbyname(socket.gethostname())
 SERVER_PORT = 5555
 
+DISCONNECT_MESSAGE = ""
 
-def setup_server() -> socket:
+# Types
+Sock_type = type(socket)
+Addr_type = Tuple[str, str]
+
+
+def setup_server() -> Sock_type:
     """
     Setting up the server and start listening for clients
     :return The server socket
     """
-    print("Setting up server...")
+    print(f"Setting up server on {SERVER_IP}...")
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((SERVER_IP, SERVER_PORT))
     server_socket.listen()
@@ -22,7 +27,8 @@ def setup_server() -> socket:
     return server_socket
 
 
-def disconnect_client(socket_to_remove: socket, client_address: tuple[str, str]) -> None:
+def disconnect_client(socket_to_remove: Sock_type,
+                      client_address: Addr_type) -> None:
     """
     Disconnect a client from the server
     :param socket_to_remove: The client to remove
@@ -57,7 +63,7 @@ def randomize_game_id() -> int:
     return game_id
 
 
-def handle_new_client(client_socket: socket, client_address: tuple[str, str])\
+def handle_new_client(client_socket: Sock_type, client_address: Addr_type) \
         -> None:
     """
     Things to do when a new client is connected to the server:
@@ -82,7 +88,27 @@ def handle_new_client(client_socket: socket, client_address: tuple[str, str])\
     print("New client joined:", client_address, "game_id:", game_id)
 
 
-def handle_player_action(player_socket: socket, received_data: str) -> None:
+def handle_client_rec_data(current_socket: Sock_type,
+                           client_address: Addr_type) -> None:
+    """
+    Handles receiving data from a client
+    :param current_socket: The socket who sent the data
+    :param client_address: The socket address who sent the data
+    :return: None
+    """
+    try:  # If the client has been disconnected an error will pop
+        data = current_socket.recv(MAX_MSG_LENGTH).decode()
+        if data == DISCONNECT_MESSAGE:  # Client wish to disconnect
+            disconnect_client(current_socket, client_address)
+
+        else:  # Client has sent data
+            clients_to_respond.append((current_socket, data))
+
+    except WindowsError:  # Client probably suddenly disconnected
+        disconnect_client(current_socket, client_address)
+
+
+def handle_player_action(player_socket: Sock_type, received_data: str) -> None:
     """
     Receive data/action from client and pass it to the game object
     :param player_socket: The player that sent the data
@@ -93,7 +119,7 @@ def handle_player_action(player_socket: socket, received_data: str) -> None:
     player_socket.send(pickle.dumps(status))
 
 
-def send_all_massages(ready_to_write: list[tuple[socket, str]]) -> None:
+def send_all_massages(ready_to_write: List[Tuple[Sock_type, str]]) -> None:
     """
     Go over all the massages that needed to be sent to the clients
     :param ready_to_write: The list of clients to send massage
@@ -118,23 +144,15 @@ def main_loop() -> None:
                 handle_new_client(client_socket, client_address)
 
             else:  # Connected client sent new data
-                try:  # If the client has been disconnected an error will pop
-                    data = current_socket.recv(MAX_MSG_LENGTH).decode()
-                    if data == "":  # Client wish to disconnect
-                        disconnect_client(current_socket, client_address)
-
-                    else:  # Client has sent data
-                        clients_to_respond.append((current_socket, data))
-
-                except WindowsError:  # Client probably suddenly disconnected
-                    disconnect_client(current_socket, client_address)
+                handle_client_rec_data(current_socket, client_address)
         send_all_massages(ready_to_write)
 
 
 if __name__ == '__main__':
-    connected_clients: list[socket] = []  # All clients connected to the Server
-    clients_to_respond: list[
-        tuple[socket, str]] = []  # All the clients who need response
-    games: dict[int, Game] = {}  # Dict of active games
-    client_to_games: dict[socket, int] = {}  # Map each client to game id
+    connected_clients: List[
+        Sock_type] = []  # All clients connected to the Server
+    clients_to_respond: List[
+        Tuple[Sock_type, str]] = []  # All the clients who need response
+    games: Dict[int, Game] = {}  # Dict of active games
+    client_to_games: Dict[Sock_type, int] = {}  # Map each client to game id
     main_loop()

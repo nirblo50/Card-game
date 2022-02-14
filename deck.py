@@ -1,13 +1,13 @@
 from card import Card, CARD_VALUES, CARD_TYPES
 import random
-
+from typing import List
 
 class Deck:
     def __init__(self) -> None:
         """
         Creates an empty deck
         """
-        self.__deck: list[Card] = []
+        self.__deck: List[Card] = []
 
     def initialize(self) -> None:
         """

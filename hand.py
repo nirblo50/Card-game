@@ -1,5 +1,6 @@
 from card import Card
 from functools import reduce
+from typing import List
 
 
 class Hand:
@@ -7,7 +8,7 @@ class Hand:
         """
         Creates an empty hand
         """
-        self.__hand: list[Card] = []
+        self.__hand: List[Card] = []
 
     def add_card(self, card: Card) -> None:
         """
@@ -38,7 +39,7 @@ class Hand:
         return reduce(lambda x, y: x + y.real_value, self.__hand, 0)
 
     @property
-    def cards(self) -> list[Card]:
+    def cards(self) -> List[Card]:
         """
         :return: A copy of the cards in the hand
         """

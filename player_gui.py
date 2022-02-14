@@ -1,14 +1,13 @@
-import pygame
-import gui_helper
+import pygame, gui_helper
 from my_client import Client
 from gui_helper import WIDTH, HEIGHT, FPS, TITLE
 from hand import Hand
 from card import Card
-from game import GameStatus
+from game import Game_status_type
 from typing import Tuple, Union
 
 image_type = type(pygame.image)
-game_status_type = Union[GameStatus, str]
+Game_status_type = Game_status_type
 clicked_type = Tuple[Union[str, None], Union[int, None]]
 
 
@@ -49,11 +48,11 @@ def draw_deck(card: Card) -> None:
     WIN.blit(card_image, gui_helper.DECK_LOCATION)
 
 
-def draw_button(game_status: game_status_type) -> None:
+def draw_button(game_status: Game_status_type) -> None:
     """
     Draws the 'try my luck' button
     """
-    if game_status.asked_to_finish:
+    if game_status["asked_to_finish"]:
         WIN.blit(gui_helper.BUTTON_CLICKED_IMAGE, gui_helper.BUTTON_LOCATION)
     else:
         WIN.blit(gui_helper.BUTTON_IMAGE, gui_helper.BUTTON_LOCATION)
@@ -72,7 +71,7 @@ def draw_end_game(text: str) -> None:
     WIN.blit(turn, TEXT_LOCATION)
 
 
-def draw_turn(game_status: game_status_type) -> None:
+def draw_turn(game_status: Game_status_type) -> None:
     """
     Draws the text of who's turn is it
     """
@@ -80,13 +79,13 @@ def draw_turn(game_status: game_status_type) -> None:
     TEXT_LOCATION = (30, 20)
     TEXT_COLOR = (0, 0, 0)
 
-    text = "Your turn" if game_status.is_turn else "Enemy's turn"
+    text = "Your turn" if game_status["is_turn"] else "Enemy's turn"
     font = pygame.font.Font('freesansbold.ttf', FONT_SIZE)
     turn = font.render(text, True, TEXT_COLOR)
     WIN.blit(turn, TEXT_LOCATION)
 
 
-def draw_all(game_status: game_status_type) -> None:
+def draw_all(game_status: Game_status_type) -> None:
     """
     Draws: hand, deck, garbage, enemy's cards, turn text, end game text
     """
@@ -104,16 +103,16 @@ def draw_all(game_status: game_status_type) -> None:
         return
 
     WIN.blit(background_image, (0, 0))
-    draw_hand(game_status.hand)
-    draw_enemy_cards(game_status.enemy_num_cards)
-    draw_deck(game_status.deck_card)
-    draw_garbage(game_status.garbage_card)
+    draw_hand(game_status["hand"])
+    draw_enemy_cards(game_status["enemy_num_cards"])
+    draw_deck(game_status["deck_card"])
+    draw_garbage(game_status["garbage_card"])
     draw_button(game_status)
     draw_turn(game_status)
     pygame.display.update()
 
 
-def what_was_clicked(game_status: game_status_type, mouse_pos: Tuple[int, int])\
+def what_was_clicked(game_status: Game_status_type, mouse_pos: Tuple[int, int])\
         -> clicked_type:
     """
     Returns a code representing the element that was clicked by the user
@@ -126,7 +125,7 @@ def what_was_clicked(game_status: game_status_type, mouse_pos: Tuple[int, int])\
     # Check if clicked on one of the cards in the hand
     mouse_x, mouse_y = mouse_pos
     card_width, card_height = gui_helper.CARD_SIZE
-    cards_location = gui_helper.hand_to_cards_location(game_status.hand,
+    cards_location = gui_helper.hand_to_cards_location(game_status["hand"],
                                                        cards_images)
 
     for card_index, card_pos in enumerate(cards_location.values()):
