@@ -1,8 +1,7 @@
 import socket, pickle
-from typing import Union
 from game import Game_status_type
 
-SERVER_IP = "192.168.1.155"
+SERVER_IP = "139.162.181.110"
 PORT = 5555
 MAX_MSG_LENGTH = 2048
 

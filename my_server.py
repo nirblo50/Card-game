@@ -3,8 +3,10 @@ from game import Game
 from typing import List, Tuple, Dict
 
 MAX_MSG_LENGTH = 1024
-SERVER_IP = "0.0.0.0"
-SERVER_IP = socket.gethostbyname(socket.gethostname())
+#SERVER_IP = "0.0.0.0"
+#SERVER_IP = socket.gethostbyname(socket.gethostname())
+SERVER_IP = ""
+
 SERVER_PORT = 5555
 
 DISCONNECT_MESSAGE = ""
@@ -104,7 +106,7 @@ def handle_client_rec_data(current_socket: Sock_type,
         else:  # Client has sent data
             clients_to_respond.append((current_socket, data))
 
-    except WindowsError:  # Client probably suddenly disconnected
+    except:  # Client probably suddenly disconnected
         disconnect_client(current_socket, client_address)
 
 
