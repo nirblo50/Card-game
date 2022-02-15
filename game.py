@@ -82,34 +82,118 @@ class Game:
         if self.__game_won:
             return self.handle_game_won(current_player)
 
-        if not self.has_started():
+        elif not self.has_started():
             return "Game did not start yet"
 
-        # If This is not this player's turn
-        if player_index is not self.__turn:
-            return self.get_game_status(current_player)
+        elif player_index is not self.__turn:   # Not player's turn
+            pass
 
-        elif action == "Try my luck":
+        # If player already made a move
+        elif current_player.turn_style != (None, None):
+            self.rules(current_player, action)
+
+        elif action == "Button":
             current_player.asked_to_finish = True
+            self.end_turn(current_player)
 
-        elif action == "Show top card from deck":
+        elif action == "Deck":
             current_player.can_see_deck_card = True
-            return self.get_game_status(current_player)
+            current_player.turn_style = "Deck", None
 
-        elif action.startswith("Throw card from hand"):
-            if current_player.can_see_deck_card:
-                card_index = int(action[-1])
-                self.take_from_deck_and_throw(current_player, card_index)
+        elif action.startswith("Hand"):
+            current_player.turn_style = "Hand", [int(action[-1])]
 
-        elif action == "Throw card from deck":
-            if current_player.can_see_deck_card:
-                self.__garbage.append(self.__deck.pop_card())
+        elif action == "Garbage":
+            current_player.turn_style = "Garbage", None
+
+        elif action == "Get":
+            pass
         else:
-            return self.get_game_status(current_player)
+            raise Exception("Unknown move:", action)
 
-        current_player.can_see_deck_card = False
-        self.next_turn()
         return self.get_game_status(current_player)
+
+    def rules(self, current_player: Player, action: str) -> None:
+        """
+        Make an action according to game rules
+        :param current_player: The player making a move
+        :param action: The action the player wish to make
+        :return: None
+        """
+        turn_style, cards_picked = current_player.turn_style
+
+        if turn_style == "Deck":
+            self.handle_deck_turn(current_player, action)
+
+        if turn_style == "Hand":
+            self.handle_hand_turn(current_player, cards_picked, action)
+
+        if turn_style == "Garbage":
+            self.handle_garbage_turn(current_player, action)
+
+    def handle_deck_turn(self, current_player: Player, action: str) -> None:
+        if action.startswith("Hand"):  # Take card from deck to hand
+            card_index = int(action[-1])
+            self.take_from_deck_and_throw(current_player, card_index)
+            self.end_turn(current_player)
+
+        elif action == "Garbage":  # Throw from deck to garbage
+            self.__garbage.append(self.__deck.pop_card())
+            self.end_turn(current_player)
+
+    def handle_hand_turn(self, current_player: Player, cards_picked: List[int]
+                         , action: str) -> None:
+        if action.startswith("Hand"):
+            card_ind = int(action[-1])
+            if self.are_same_value_cards(current_player, card_ind) \
+                    and card_ind not in cards_picked:
+                cards_picked.append(card_ind)
+            else:
+                current_player.turn_style = None, None
+
+        if action == "Garbage":
+            if len(cards_picked) <= 1:
+                current_player.turn_style = None, None
+            cards_picked.sort(reverse=True)  # To avoid index
+            # exception after removing from hand
+            for card_index in cards_picked:
+                card = current_player.hand.remove_card(card_index)
+                self.__garbage.append(card)
+            self.end_turn(current_player)
+
+    def handle_garbage_turn(self, current_player: Player, action: str) -> None:
+        if action.startswith("Hand"):
+            hand_card_ind = int(action[-1])
+            hand_card = current_player.hand.card_in(hand_card_ind)
+            garbage_card = self.__garbage.pop()
+            current_player.hand.replace_card(hand_card_ind, garbage_card)
+            self.__garbage.append(hand_card)
+            self.end_turn(current_player)
+
+    @staticmethod
+    def are_same_value_cards(current_player: Player, cur_card_index: int) \
+            -> bool:
+        """
+        Check if a new card is the same value as the cards already picked
+        :param current_player: The player making the move
+        :param cur_card_index: The new card's index in the hand
+        :return: True if the value is the same or False if not
+        """
+        card_in_hand_index = current_player.turn_style[1][0]
+        value = current_player.hand.card_in(card_in_hand_index).value
+        if current_player.hand.card_in(cur_card_index).value != value:
+            return False
+        return True
+
+    def end_turn(self, current_player: Player) -> None:
+        """
+        Resting the player's turn
+        :param current_player: The player
+        :return: None
+        """
+        current_player.can_see_deck_card = False
+        current_player.turn_style = None, None
+        self.next_turn()
 
     def take_from_deck_and_throw(self, current_player: Any,
                                  card_index: int) -> None:
@@ -242,8 +326,4 @@ class Game:
 
 
 if __name__ == '__main__':
-    game = Game(1234)
-    game.add_player("Nir")
-    game.add_player("Hadar")
-    game.start()
-
+    pass

@@ -3,12 +3,9 @@ from game import Game
 from typing import List, Tuple, Dict
 
 MAX_MSG_LENGTH = 1024
-#SERVER_IP = "0.0.0.0"
-#SERVER_IP = socket.gethostbyname(socket.gethostname())
-SERVER_IP = ""
+SERVER_IP = ""  # Connect to local available ip
 
 SERVER_PORT = 5555
-
 DISCONNECT_MESSAGE = ""
 
 # Types
@@ -21,8 +18,9 @@ def setup_server() -> Sock_type:
     Setting up the server and start listening for clients
     :return The server socket
     """
-    print(f"Setting up server on {SERVER_IP}...")
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    cur_server = socket.gethostbyname(socket.gethostname())
+    print(f"Setting up server on {cur_server}...")
     server_socket.bind((SERVER_IP, SERVER_PORT))
     server_socket.listen()
     print("Listening for clients...")

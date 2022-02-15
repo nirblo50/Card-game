@@ -4,7 +4,7 @@ import pygame
 from typing import Dict, List, Tuple
 
 TITLE = "Balouka Card game"
-WIDTH, HEIGHT = 1280, 720
+WIDTH, HEIGHT = 1088, 612
 FPS = 60
 
 CARD_SIZE = (100, 140)
@@ -13,6 +13,8 @@ PLAYER_CARDS_Y = HEIGHT - CARD_SIZE[1] - 30
 ENEMY_CARDS_Y = 30
 BUTTON_SIZE = (150, 66)
 BUTTON_LOCATION = 30, HEIGHT - BUTTON_SIZE[1] - 30
+
+FONT_SIZE = 45
 
 GARBAGE_LOCATION = WIDTH // 2 - CARD_SIZE[0] // 2, HEIGHT // 2 - CARD_SIZE[
     1] // 2
