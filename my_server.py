@@ -1,9 +1,13 @@
-import random, socket, select, pickle
-from game import Game
+import pickle
+import random
+import select
+import socket
 from typing import List, Tuple, Dict
 
+from game import Game
+
 MAX_MSG_LENGTH = 1024
-SERVER_IP = ""  # Connect to local available ip
+SERVER_IP = ""  # Connect to a local available ip
 
 SERVER_PORT = 5555
 DISCONNECT_MESSAGE = ""
@@ -122,7 +126,7 @@ def handle_player_action(player_socket: Sock_type, received_data: str) -> None:
 def send_all_massages(ready_to_write: List[Tuple[Sock_type, str]]) -> None:
     """
     Go over all the massages that needed to be sent to the clients
-    :param ready_to_write: The list of clients to send massage
+    :param ready_to_write: The list of clients to send message
     """
     for client, msg in clients_to_respond:
         if client in ready_to_write:

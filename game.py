@@ -8,10 +8,14 @@ MAX_PLAYERS = 2
 MIN_PLAYERS = 2
 START_CARDS_NUM = 4
 
-Game_status_type = Dict[str, Union[str, int, Card, Hand]]
+Game_status_type = Dict[str, Union[None, str, int, Card, Hand]]
 
 
 class Game:
+    """
+    This class represents a game of 'Balouka card game' which is basically a
+    copy of the 'Yaniv' game.
+    """
     def __init__(self, game_id) -> None:
         self.__game_id: int = game_id
         self.__players: Dict[Any, Player] = {}
@@ -30,6 +34,16 @@ class Game:
         self.__deck.shuffle()
         self.__garbage.append(self.__deck.pop_card())
         self.deal_cards()
+
+    def reset(self) -> None:
+        """
+        Resets the game
+        """
+        self.__garbage = []
+        self.__turn = 0
+        self.__has_started = False
+        self.__game_won = False
+        self.empty_hands()
 
     def deal_cards(self) -> None:
         """
@@ -54,10 +68,8 @@ class Game:
         :param player_name: The player to remove
         """
         self.__players.pop(player_name)
-
         if len(self.__players) < MIN_PLAYERS:
-            self.__has_started = False
-            self.empty_hands()
+            self.reset()
 
     def empty_hands(self) -> None:
         """
@@ -69,7 +81,7 @@ class Game:
             player.score = 0
 
     def player_make_action(self, player_name: Any,
-                           action: str) -> Game_status_type:
+                           action: str) -> Union[Game_status_type, str]:
         """
         Handles the actions from the player
         :param player_name: The name of the player that did the action
@@ -132,6 +144,9 @@ class Game:
             self.handle_garbage_turn(current_player, action)
 
     def handle_deck_turn(self, current_player: Player, action: str) -> None:
+        """
+        What to do when the turn type is deck (the deck card is shown)
+        """
         if action.startswith("Hand"):  # Take card from deck to hand
             card_index = int(action[-1])
             self.take_from_deck_and_throw(current_player, card_index)
@@ -141,8 +156,11 @@ class Game:
             self.__garbage.append(self.__deck.pop_card())
             self.end_turn(current_player)
 
-    def handle_hand_turn(self, current_player: Player, cards_picked: List[int]
-                         , action: str) -> None:
+    def handle_hand_turn(self, current_player: Player, cards_picked: List[int],
+                         action: str) -> None:
+        """
+        What to do when the turn type is hand (card from hand was picked)
+        """
         if action.startswith("Hand"):
             card_ind = int(action[-1])
             if self.are_same_value_cards(current_player, card_ind) \
@@ -156,12 +174,16 @@ class Game:
                 current_player.turn_style = None, None
             cards_picked.sort(reverse=True)  # To avoid index
             # exception after removing from hand
+            current_player.hand.add_card(self.__garbage.pop())
             for card_index in cards_picked:
                 card = current_player.hand.remove_card(card_index)
                 self.__garbage.append(card)
             self.end_turn(current_player)
 
     def handle_garbage_turn(self, current_player: Player, action: str) -> None:
+        """
+        What to do when turn type is garbage (garbage card was picked)
+        """
         if action.startswith("Hand"):
             hand_card_ind = int(action[-1])
             hand_card = current_player.hand.card_in(hand_card_ind)
@@ -270,7 +292,7 @@ class Game:
     def get_enemy(self, current_player: Player) -> Player:
         """
         Return the player object of the enemy if the player given
-        :param player_name: The player to get his enemy
+        :param current_player: The player to get his enemy
         """
         for player in self.__players.values():
             if player != current_player:
@@ -280,7 +302,7 @@ class Game:
         """
         Return a GameStatus object that is consist of:
         player's hand, enemy_num_cards, garbage_card, deck_card
-        :param current_player: The player to send it's game status
+        :param current_player: The player to send the game status
         """
         game_status: Game_status_type = {}
 
@@ -307,21 +329,39 @@ class Game:
         return self.__players.copy()
 
     def get_turn(self) -> int:
+        """
+        :return: The current turn in the game
+        """
         return self.__turn
 
     def has_started(self) -> bool:
+        """
+        :return: Did the game started yet or not
+        """
         return self.__has_started
 
     def garbage_top_card(self) -> Card:
+        """
+        :return: The card in the top of the garbage
+        """
         return self.__garbage[-1]
 
     def is_full(self) -> bool:
+        """
+        Is the game in full players capacity
+        """
         return len(self.__players) == MAX_PLAYERS
 
     def players_num(self) -> int:
+        """
+        :return: The number of players connected to the game
+        """
         return len(self.__players)
 
     def name_to_index(self, name):
+        """
+        :return: The index of the player in the player
+        """
         return self.player_name_to_index(name)
 
 

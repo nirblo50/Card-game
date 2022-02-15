@@ -1,12 +1,16 @@
-from typing import Any, Tuple, List
+from typing import Any, Tuple, List, Union
 from hand import Hand
-from card import Card
+
+Turn_style_type = Union[Tuple[str, List[int]], Tuple[None, None]]
 
 
 class Player:
-    def __init__(self, name: Any, hand: Hand):
+    """
+    This class represents a player in 'Balouka card game'
+    """
+    def __init__(self, name: Any, hand: Hand) -> None:
         self.name: Any = name
         self.hand: Hand = hand
         self.can_see_deck_card: bool = False
         self.asked_to_finish: bool = False
-        self.turn_style: Tuple[str, List[int]] = None, None   # (type, [cards index])
+        self.turn_style: Turn_style_type = None, None   # (turn_type, card_ind]

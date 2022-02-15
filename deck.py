@@ -2,7 +2,11 @@ from card import Card, CARD_VALUES, CARD_TYPES
 import random
 from typing import List
 
+
 class Deck:
+    """
+    This class represents a game deck with cards
+    """
     def __init__(self) -> None:
         """
         Creates an empty deck
@@ -13,6 +17,7 @@ class Deck:
         """
         Creates a full deck from all the cards
         """
+        self.__deck = []
         for _value in CARD_VALUES:
             for _type, _color in CARD_TYPES.items():
                 card = Card(_value, _type, _color)
@@ -50,4 +55,3 @@ class Deck:
 
     def __iter__(self) -> iter:
         return iter(self.__deck)
-

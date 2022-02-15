@@ -67,9 +67,10 @@ def hand_to_cards_location(hand: Hand, cards_images: Dict[str, image_type]) \
     return cards_locations
 
 
-def enemy_cards_location(num_cards: int) -> List[Tuple[int, int]]:
+def enemy_cards_location(num_cards: int) -> \
+        Tuple[image_type, List[Tuple[int, int]]]:
     """
-    :param num_cards: Num of enemy's cards
+    param num_cards: Num of enemy's cards
     :return: list of all the cards location
     """
     cards_locations = []

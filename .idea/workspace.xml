@@ -4,30 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Made an EXE file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/Analysis-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/EXE-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/PKG-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/PYZ-00.pyz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/PYZ-00.toc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/player_gui.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/player_gui.pkg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/warn-player_gui.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/warn-player_gui.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/xref-player_gui.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/player_gui/xref-player_gui.html" afterDir="false" />
+    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/Analysis-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/PKG-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-01.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-02.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/player_gui.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/player_gui.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/warn-player_gui.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/player_gui/xref-player_gui.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run game.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/withinterpreter.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -286,7 +293,7 @@
       <workItem from="1644611270234" duration="156000" />
       <workItem from="1644736714133" duration="12152000" />
       <workItem from="1644840455701" duration="221000" />
-      <workItem from="1644840691320" duration="21756000" />
+      <workItem from="1644840691320" duration="31119000" />
     </task>
     <task id="LOCAL‎00001" summary="With Card, Deck and partially Hand">
       <created>1644162916244</created>
@@ -378,7 +385,13 @@
       <option name="presentableId" value="LOCAL‎00015" />
       <updated>1644859802896</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎00016" summary="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage">
+      <created>1644924055971</created>
+      <option name="number" value="LOCAL‎00016" />
+      <option name="presentableId" value="LOCAL‎00016" />
+      <updated>1644924055971</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,12 +421,13 @@
     <MESSAGE value="Changed game_status to Dict and not a new object.&#10;fixed type hints" />
     <MESSAGE value="Changed to a server on Linode" />
     <MESSAGE value="Made an EXE file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made an EXE file" />
+    <MESSAGE value="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/card_game$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644345925422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644743051096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644923579787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644939827381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1644739737047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644851555680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644343018998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -426,8 +440,8 @@
     <SUITE FILE_PATH="coverage/card_game$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644349425872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$client.coverage" NAME="client Coverage Results" MODIFIED="1644178670212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644349489026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644923584966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1644923071350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644939824785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1644939647266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Card_Game$card.coverage" NAME="card Coverage Results" MODIFIED="1644160187765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$deck.coverage" NAME="deck Coverage Results" MODIFIED="1644164176716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$sandbox.coverage" NAME="sandbox Coverage Results" MODIFIED="1644226379039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

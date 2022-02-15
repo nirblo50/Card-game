@@ -1,9 +1,11 @@
 from card import Card
-from functools import reduce
 from typing import List
 
 
 class Hand:
+    """
+    This class represents a hand of cards in a card game
+    """
     def __init__(self) -> None:
         """
         Creates an empty hand
@@ -30,13 +32,16 @@ class Hand:
         self.__hand[card_index] = card
 
     def card_in(self, card_index: int) -> Card:
+        """
+        Return the card in a specific location in the hand
+        """
         return self.__hand[card_index]
 
     def hand_value(self) -> int:
         """
         :return: The sum value of all the cards in the hand
         """
-        return reduce(lambda x, y: x + y.real_value, self.__hand, 0)
+        return sum([card.numerical_value for card in self.__hand])
 
     @property
     def cards(self) -> List[Card]:

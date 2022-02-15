@@ -1,14 +1,16 @@
-import pygame, gui_helper
-from my_client import Client
-from gui_helper import WIDTH, HEIGHT, FPS, TITLE, FONT_SIZE
-from hand import Hand
+from typing import Tuple, Union
+
+import gui_helper
+import pygame
+
 from card import Card
 from game import Game_status_type
-from typing import Tuple, Union
+from gui_helper import WIDTH, HEIGHT, FPS, TITLE, FONT_SIZE
+from hand import Hand
+from my_client import Client
 
 image_type = type(pygame.image)
 Game_status_type = Game_status_type
-clicked_type = Tuple[Union[str, None], Union[int, None]]
 
 
 def draw_hand(hand: Hand) -> None:
@@ -62,25 +64,25 @@ def draw_end_game(text: str) -> None:
     """
     Draws the text of the end of game - you win / you lose
     """
-    TEXT_LOCATION = (WIDTH // 2 - 100, HEIGHT // 2)
-    TEXT_COLOR = (0, 0, 0)
+    text_location = (WIDTH // 2 - 100, HEIGHT // 2)
+    text_color = (0, 0, 0)
 
-    font = pygame.font.SysFont('arial', FONT_SIZE*2)
-    turn = font.render(text, True, TEXT_COLOR)
-    WIN.blit(turn, TEXT_LOCATION)
+    font = pygame.font.SysFont('arial', FONT_SIZE * 2)
+    turn = font.render(text, True, text_color)
+    WIN.blit(turn, text_location)
 
 
 def draw_turn(game_status: Game_status_type) -> None:
     """
-    Draws the text of who's turn is it
+    Draws the text of whose turn is it
     """
-    TEXT_LOCATION = (30, 35)
-    TEXT_COLOR = (0, 0, 0)
+    text_location = (30, 35)
+    text_color = (0, 0, 0)
 
     text = "Your turn" if game_status["is_turn"] else "Enemy's turn"
     font = pygame.font.SysFont('arial', FONT_SIZE)
-    turn = font.render(text, True, TEXT_COLOR)
-    WIN.blit(turn, TEXT_LOCATION)
+    turn = font.render(text, True, text_color)
+    WIN.blit(turn, text_location)
 
 
 def draw_all(game_status: Game_status_type) -> None:
@@ -110,8 +112,8 @@ def draw_all(game_status: Game_status_type) -> None:
     pygame.display.update()
 
 
-def what_was_clicked(game_status: Game_status_type, mouse_pos: Tuple[int, int])\
-        -> clicked_type:
+def what_was_clicked(game_status: Game_status_type,
+                     mouse_pos: Tuple[int, int]) -> Union[None, str]:
     """
     Returns a code representing the element that was clicked by the user
     """
@@ -128,23 +130,27 @@ def what_was_clicked(game_status: Game_status_type, mouse_pos: Tuple[int, int])\
 
     for card_index, card_pos in enumerate(cards_location.values()):
         card_x, card_y = card_pos[1]
-        if card_x <= mouse_x <= card_x + card_width and card_y <= mouse_y <= card_y + card_height:
+        if card_x <= mouse_x <= card_x + card_width and \
+                card_y <= mouse_y <= card_y + card_height:
             return f"Hand|{card_index}"
 
     # Check if clicked on the deck
     deck_x, deck_y = gui_helper.DECK_LOCATION
-    if deck_x <= mouse_x <= deck_x + card_width and deck_y <= mouse_y <= deck_y + card_height:
+    if deck_x <= mouse_x <= deck_x + card_width and \
+            deck_y <= mouse_y <= deck_y + card_height:
         return "Deck"
 
     # Check if clicked on the garbage
     garbage_x, garbage_y = gui_helper.GARBAGE_LOCATION
-    if garbage_x <= mouse_x <= garbage_x + card_width and garbage_y <= mouse_y <= garbage_y + card_height:
+    if garbage_x <= mouse_x <= garbage_x + card_width and \
+            garbage_y <= mouse_y <= garbage_y + card_height:
         return "Garbage"
 
     # Check if clicked on Button
     button_x, button_y = gui_helper.BUTTON_LOCATION
     button_width, button_height = gui_helper.BUTTON_SIZE
-    if button_x <= mouse_x <= button_x + button_width and button_y <= mouse_y <= button_y + button_height:
+    if button_x <= mouse_x <= button_x + button_width and \
+            button_y <= mouse_y <= button_y + button_height:
         return "Button"
     return None
 
@@ -157,16 +163,17 @@ def main_loop() -> None:
         action[0] = "Get"
         game_status = client.receive_data()
 
-        for event in pygame.event.get():    # All the events
+        for event in pygame.event.get():  # All the events
             if event.type == pygame.QUIT:  # If exit window was clicked
+                pygame.quit()
                 return
+
             if event.type == pygame.MOUSEBUTTONUP:  # If mouse was clicked
                 mouse_pos = pygame.mouse.get_pos()
                 _clicked = what_was_clicked(game_status, mouse_pos)
                 action[0] = _clicked if _clicked else "Get"
 
         draw_all(game_status)
-    pygame.quit()
 
 
 if __name__ == '__main__':
@@ -181,7 +188,6 @@ if __name__ == '__main__':
     action = ["Get"]  # What to send the server (list for aliasing)
 
     # Client stuff
-    Client
     client = Client()
     client.connect()
 
