@@ -2,7 +2,7 @@
 
 ##  About this project
 ```bash
---- see video.mp4 that included to see how the game runs ---
+--- watch game running video.mp4 to see how the game runs ---
 
 This project is an online card game (with 'Yaniv' rules).
 In this project I mostly focused in the client-server communication and the mudularity of the project so there
