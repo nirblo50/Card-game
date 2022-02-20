@@ -36,7 +36,7 @@ Requirements:
 ### Running The App
 
 ```bash
-Run_Game.exe (If Lode server still runs)
+Run_Game.exe (If Linode server still runs)
 or
 python player_gui.py
 ```
