@@ -27,10 +27,7 @@ Make sure you have Python version of 3.9 or above installed.
 
 
 ```bash
-Requirements:
---------------
-1. pygame
-2. socket
+pip install -r requirements.txt
 ```
 
 ### Running The App
