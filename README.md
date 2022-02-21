@@ -16,7 +16,7 @@ you can only play on your local Lan (change the server_ip in client.py to your l
 ```bash
 1. Server side using Sockets
 2. client side also using sockets
-3. Game-logic
+3. Game-logic and rules
 4. User's Gui using pygame 
 ```
 
