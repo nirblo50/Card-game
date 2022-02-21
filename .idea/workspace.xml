@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Added documentation and fixed bug when game is finished">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Cleaned some mess and reorganized the folders">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,6 +333,7 @@
       <workItem from="1645453580068" duration="145000" />
       <workItem from="1645453756249" duration="1864000" />
       <workItem from="1645457170665" duration="1482000" />
+      <workItem from="1645458674839" duration="338000" />
     </task>
     <task id="LOCAL‎00001" summary="With Card, Deck and partially Hand">
       <created>1644162916244</created>
@@ -442,7 +443,13 @@
       <option name="presentableId" value="LOCAL‎00018" />
       <updated>1645458576751</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL‎00019" summary="Cleaned some mess and reorganized the folders">
+      <created>1645458762010</created>
+      <option name="number" value="LOCAL‎00019" />
+      <option name="presentableId" value="LOCAL‎00019" />
+      <updated>1645458762010</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +481,8 @@
     <MESSAGE value="Made an EXE file" />
     <MESSAGE value="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage" />
     <MESSAGE value="Added documentation and fixed bug when game is finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added documentation and fixed bug when game is finished" />
+    <MESSAGE value="Cleaned some mess and reorganized the folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned some mess and reorganized the folders" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/card_game$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644345925422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

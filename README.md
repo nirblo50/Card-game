@@ -33,7 +33,7 @@ pip install -r requirements.txt
 ### Running The App
 
 ```bash
-Run_Game.exe (If Linode server still runs)
-or
-python player_gui.py
+To play online- Run_Game.exe (If Linode server still runs)
+
+To play on local Network, first run my_server.py and than python player_gui.py
 ```
