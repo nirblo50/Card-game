@@ -4,30 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage">
+    <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Added documentation and fixed bug when game is finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/Tree-02.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/player_gui.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/player_gui.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/warn-player_gui.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/player_gui/xref-player_gui.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" afterPath="$PROJECT_DIR$/card.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" afterPath="$PROJECT_DIR$/deck.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/hand.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Run Game.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/10C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/10D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/10H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/10S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/1C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/1D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/1H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/1S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/3C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/3D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/3H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/3S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/4C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/4D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/4H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/4S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/5C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/5D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/5H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/5S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/6C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/6D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/6H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/6S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/7C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/7D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/7H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/7S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/8C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/8D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/8H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/8S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/9C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/9D.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/9H.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/9S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/KC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/KD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/KH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/KS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/QC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/QD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/QH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/QS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/blue_back2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/button_clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/buttonclicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/red_back2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/red_back3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/small_background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/small_background2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/small_background3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui_helper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hand.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_client.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/my_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/player_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/player_gui.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,31 +129,16 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.my_server">
-    <configuration name="game (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Card Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nirbl\OneDrive\שולחן העבודה\card-game2\user_stuff" />
+      <recent name="C:\Users\nirbl\OneDrive\שולחן העבודה\card-game2\game_stuff" />
+      <recent name="C:\Users\nirbl\OneDrive\שולחן העבודה\card-game2\user" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.player_gui2">
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Card Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,96 +161,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Card Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\nirbl\OneDrive\שולחן העבודה\card-game2\game_stuff\game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="gui_helper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Card Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui_helper.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Card Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hand.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Card Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_client.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="my_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Card Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="player2" type="PythonConfigurationType" factoryName="Python">
-      <module name="Card Game" />
+      <module name="card-game2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -227,7 +196,95 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/player_gui.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\nirbl\OneDrive\שולחן העבודה\card-game2\user\gui_helper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="card-game2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user_stuff" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user_stuff/my_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="my_server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="G:\מחשבים אחרים\המחשב שלי\אקדמיה\פרויקטים\card-game\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="player2" type="PythonConfigurationType" factoryName="Python">
+      <module name="card-game2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="G:\מחשבים אחרים\המחשב שלי\אקדמיה\פרויקטים\card-game\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user_stuff" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user_stuff/player_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="player_gui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="G:\מחשבים אחרים\המחשב שלי\אקדמיה\פרויקטים\card-game\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user/player_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -237,19 +294,63 @@
       <method v="2" />
     </configuration>
     <configuration name="player_gui" type="PythonConfigurationType" factoryName="Python">
-      <module name="Card Game" />
+      <module name="card-game2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="G:\מחשבים אחרים\המחשב שלי\אקדמיה\פרויקטים\card-game\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/OneDrive/שולחן העבודה/card-game2/user/player_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="player_gui2" type="PythonConfigurationType" factoryName="Python">
+      <module name="card-game2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="G:\מחשבים אחרים\המחשב שלי\אקדמיה\פרויקטים\card-game\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user_stuff" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user_stuff/player_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="card-game2" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/user_stuff" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/player_gui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user_stuff/tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -259,21 +360,23 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.game" />
       <item itemvalue="Python.player_gui" />
       <item itemvalue="Python.player2" />
+      <item itemvalue="Python.player_gui2" />
       <item itemvalue="Python.my_server" />
-      <item itemvalue="Python.hand" />
-      <item itemvalue="Python.game (1)" />
-      <item itemvalue="Python.my_client" />
       <item itemvalue="Python.gui_helper" />
+      <item itemvalue="Python.player_gui (1)" />
+      <item itemvalue="Python.tests" />
+      <item itemvalue="Python.my_client" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.my_server" />
-        <item itemvalue="Python.game (1)" />
-        <item itemvalue="Python.gui_helper" />
         <item itemvalue="Python.my_client" />
-        <item itemvalue="Python.hand" />
+        <item itemvalue="Python.my_server" />
+        <item itemvalue="Python.tests" />
+        <item itemvalue="Python.player_gui (1)" />
+        <item itemvalue="Python.gui_helper" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +396,15 @@
       <workItem from="1644611270234" duration="156000" />
       <workItem from="1644736714133" duration="12152000" />
       <workItem from="1644840455701" duration="221000" />
-      <workItem from="1644840691320" duration="31119000" />
+      <workItem from="1644840691320" duration="33400000" />
+      <workItem from="1645356519653" duration="847000" />
+      <workItem from="1645368314865" duration="292000" />
+      <workItem from="1645368614712" duration="122000" />
+      <workItem from="1645368747260" duration="59000" />
+      <workItem from="1645429443516" duration="597000" />
+      <workItem from="1645453580068" duration="145000" />
+      <workItem from="1645453756249" duration="1864000" />
+      <workItem from="1645457170665" duration="1090000" />
     </task>
     <task id="LOCAL‎00001" summary="With Card, Deck and partially Hand">
       <created>1644162916244</created>
@@ -391,7 +502,13 @@
       <option name="presentableId" value="LOCAL‎00016" />
       <updated>1644924055971</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎00017" summary="Added documentation and fixed bug when game is finished">
+      <created>1644941051444</created>
+      <option name="number" value="LOCAL‎00017" />
+      <option name="presentableId" value="LOCAL‎00017" />
+      <updated>1644941051444</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,30 +539,40 @@
     <MESSAGE value="Changed to a server on Linode" />
     <MESSAGE value="Made an EXE file" />
     <MESSAGE value="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed game logic from player_gui and added some game features such as dumping identical cards and collect card from garbage" />
+    <MESSAGE value="Added documentation and fixed bug when game is finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added documentation and fixed bug when game is finished" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/card_game$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644345925422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644743051096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644939827381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1644739737047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644851555680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game2$player_gui__2_.coverage" NAME="player_gui (2) Coverage Results" MODIFIED="1645456679591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/my_server_py$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644998326719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644343018998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1644349421436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1645457696721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$card.coverage" NAME="card Coverage Results" MODIFIED="1644345784886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$my_client__1_.coverage" NAME="my_client (1) Coverage Results" MODIFIED="1644343949641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Card_Game$deck.coverage" NAME="deck Coverage Results" MODIFIED="1644162744846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$player_gui__1_.coverage" NAME="player_gui (1) Coverage Results" MODIFIED="1645368649328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
     <SUITE FILE_PATH="coverage/card_game$game.coverage" NAME="game Coverage Results" MODIFIED="1644346168913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game2$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1645453807570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$my_client.coverage" NAME="my_client Coverage Results" MODIFIED="1644743114078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644349425872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$client.coverage" NAME="client Coverage Results" MODIFIED="1644178670212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1644349489026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/my_server_py$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644939824785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$my_client.coverage" NAME="my_client Coverage Results" MODIFIED="1645457729422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/my_server_py$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1644998317913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1644939647266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Card_Game$card.coverage" NAME="card Coverage Results" MODIFIED="1644160187765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game2$player_gui__1_.coverage" NAME="player_gui (1) Coverage Results" MODIFIED="1645453962732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user" />
     <SUITE FILE_PATH="coverage/card_game$deck.coverage" NAME="deck Coverage Results" MODIFIED="1644164176716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$sandbox.coverage" NAME="sandbox Coverage Results" MODIFIED="1644226379039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$player.coverage" NAME="player Coverage Results" MODIFIED="1644346144457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$game__1_.coverage" NAME="game (1) Coverage Results" MODIFIED="1644916452601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644743051096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1644739737047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_server_py$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644851555680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$player_gui__2_.coverage" NAME="player_gui2 Coverage Results" MODIFIED="1645458174659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/card_game$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1645458171215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/card_game$client.coverage" NAME="client Coverage Results" MODIFIED="1644178670212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1645368601761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Card_Game$card.coverage" NAME="card Coverage Results" MODIFIED="1644160187765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$tests.coverage" NAME="tests Coverage Results" MODIFIED="1645457614450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/card_game$sandbox.coverage" NAME="sandbox Coverage Results" MODIFIED="1644226379039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game2$my_server.coverage" NAME="my_server Coverage Results" MODIFIED="1645454163355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game$player.coverage" NAME="player Coverage Results" MODIFIED="1644346144457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/card_game2$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1645453833997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

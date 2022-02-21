@@ -3,8 +3,7 @@ import random
 import select
 import socket
 from typing import List, Tuple, Dict
-
-from game import Game
+from game_stuff.game import Game
 
 MAX_MSG_LENGTH = 1024
 SERVER_IP = ""  # Connect to a local available ip
