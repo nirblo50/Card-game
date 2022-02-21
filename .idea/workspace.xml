@@ -6,78 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="36ecc405-79dc-4271-bb64-f8f307f287f8" name="Changes" comment="Added documentation and fixed bug when game is finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run Game.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/10C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/10D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/10H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/10S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/1C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/1D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/1H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/1S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/2C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/2D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/2H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/2S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/3C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/3D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/3H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/3S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/4C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/4D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/4H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/4S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/5C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/5D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/5H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/5S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/6C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/6D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/6H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/6S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/7C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/7D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/7H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/7S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/8C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/8D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/8H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/8S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/9C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/9D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/9H.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/9S.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/KC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/KD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/KH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/KS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/QC.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/QD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/QH.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/QS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/blue_back2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/button_clicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/buttonclicked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/red_back2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/red_back3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/small_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/small_background2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/small_background3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/card.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/deck.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_helper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hand.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/player_gui.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="NewBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -404,7 +332,7 @@
       <workItem from="1645429443516" duration="597000" />
       <workItem from="1645453580068" duration="145000" />
       <workItem from="1645453756249" duration="1864000" />
-      <workItem from="1645457170665" duration="1090000" />
+      <workItem from="1645457170665" duration="1482000" />
     </task>
     <task id="LOCAL‎00001" summary="With Card, Deck and partially Hand">
       <created>1644162916244</created>
@@ -508,7 +436,13 @@
       <option name="presentableId" value="LOCAL‎00017" />
       <updated>1644941051444</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎00018" summary="Added documentation and fixed bug when game is finished">
+      <created>1645458576751</created>
+      <option name="number" value="LOCAL‎00018" />
+      <option name="presentableId" value="LOCAL‎00018" />
+      <updated>1645458576751</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,8 +498,8 @@
     <SUITE FILE_PATH="coverage/my_server_py$hand.coverage" NAME="hand Coverage Results" MODIFIED="1644743051096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$game2.coverage" NAME="game2 Coverage Results" MODIFIED="1644739737047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/my_server_py$gui_helper.coverage" NAME="gui_helper Coverage Results" MODIFIED="1644851555680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/card_game$player_gui__2_.coverage" NAME="player_gui2 Coverage Results" MODIFIED="1645458174659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
-    <SUITE FILE_PATH="coverage/card_game$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1645458171215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/card_game$player_gui__2_.coverage" NAME="player_gui2 Coverage Results" MODIFIED="1645458329232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
+    <SUITE FILE_PATH="coverage/card_game$player2.coverage" NAME="player2 Coverage Results" MODIFIED="1645458333532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/user_stuff" />
     <SUITE FILE_PATH="coverage/card_game$client.coverage" NAME="client Coverage Results" MODIFIED="1644178670212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/card_game$player_gui.coverage" NAME="player_gui Coverage Results" MODIFIED="1645368601761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Card_Game$card.coverage" NAME="card Coverage Results" MODIFIED="1644160187765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
