@@ -1,6 +1,6 @@
 # Python Online Card Game
 
-<img align="center" alt="Coding" width="300" src="card_game_img.PNG">
+<img align="center" alt="Coding" src="card_game_img.PNG" height="280">
 
 
 ##  About this project
