@@ -11,9 +11,6 @@ This project is an online card game (with 'Yaniv' rules).
 In this project I mostly focused in the client-server communication and the modularity  of the project
 so there is minimal user interface and graphics.
 
----True to march 2022 this game's server runs on Linode external server so the game can be played from
-any machine But it is there for limited time, so if you tried to play and you receive an error -
-you can only play on your local Lan (change the server_ip in client.py to your local ip)--- 
 ```
 ##  Features
 ```bash
@@ -27,8 +24,9 @@ you can only play on your local Lan (change the server_ip in client.py to your l
 ### Setup & Installation
 
 Make sure you have Python version of 3.9 or above installed.  
-use git clone to clone this repository
-
+1. use git clone to clone this repository.  
+2. first run the my_server.py file.  
+3. after the serever is up and running, run the player_gui.py file for each player.
 
 ```bash
 pip install -r requirements.txt
