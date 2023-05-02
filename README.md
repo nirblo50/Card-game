@@ -26,7 +26,7 @@ you can only play on your local Lan (change the server_ip in client.py to your l
 
 ### Setup & Installation
 
-Make sure you have Python version of 3.9 or above installed.
+Make sure you have Python version of 3.9 or above installed.  
 use git clone to clone this repository
 
 
