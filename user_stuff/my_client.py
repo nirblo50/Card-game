@@ -1,8 +1,7 @@
 import socket, pickle
 from game_stuff.game import Game_status_type
 
-#SERVER_IP = 'localhost'    # To run on local Network
-SERVER_IP = "139.162.181.110"
+SERVER_IP = 'localhost'    # To run on local Network
 PORT = 5555
 MAX_MSG_LENGTH = 1024
 
