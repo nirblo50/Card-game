@@ -1,5 +1,8 @@
 # Python Online Card Game
 
+<img align="center" alt="Coding" width="300" src="card_game_img.PNG">
+
+
 ##  About this project
 ```bash
 --- watch game running video.mp4 to see how the game runs ---
@@ -24,6 +27,7 @@ you can only play on your local Lan (change the server_ip in client.py to your l
 ### Setup & Installation
 
 Make sure you have Python version of 3.9 or above installed.
+use git clone to clone this repository
 
 
 ```bash
