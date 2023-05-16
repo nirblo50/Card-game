@@ -20,15 +20,15 @@ GARBAGE_LOCATION = WIDTH // 2 - CARD_SIZE[0] // 2, HEIGHT // 2 - CARD_SIZE[
     1] // 2
 DECK_LOCATION = WIDTH - CARDS_PADDING - CARD_SIZE[0], GARBAGE_LOCATION[1]
 
-background_image = pygame.image.load('assets/small_background3.jpg')
+background_image = pygame.image.load('../assets/small_background3.jpg')
 
-BACK_CARD_IMAGE = pygame.image.load(r'assets/red_back3.png')
+BACK_CARD_IMAGE = pygame.image.load(r'../assets/red_back3.png')
 BACK_CARD_IMAGE = pygame.transform.scale(BACK_CARD_IMAGE, CARD_SIZE)
 
-BUTTON_IMAGE = pygame.image.load(r'assets/button.png')
+BUTTON_IMAGE = pygame.image.load(r'../assets/button.png')
 BUTTON_IMAGE = pygame.transform.scale(BUTTON_IMAGE, BUTTON_SIZE)
 
-BUTTON_CLICKED_IMAGE = pygame.image.load(r'assets/buttonclicked.png')
+BUTTON_CLICKED_IMAGE = pygame.image.load(r'../assets/buttonclicked.png')
 BUTTON_CLICKED_IMAGE = pygame.transform.scale(BUTTON_CLICKED_IMAGE,
                                               BUTTON_SIZE)
 image_type = type(pygame.image)
@@ -44,7 +44,7 @@ def create_cards_image_dict() -> Dict[str, image_type]:
     deck.initialize()
     for card in deck:
         _value, _type = card.value, card.type[0]
-        path = "assets\\" + _value + _type + ".png"
+        path = "../assets\\" + _value + _type + ".png"
         card_images[str(card)] = pygame.image.load(path)
         card_images[str(card)] = pygame.transform.scale(card_images[str(card)],
                                                         CARD_SIZE)

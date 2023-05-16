@@ -7,7 +7,7 @@ from game_stuff.card import Card
 from game_stuff.game import Game_status_type
 from gui_helper import WIDTH, HEIGHT, FPS, TITLE, FONT_SIZE
 from game_stuff.hand import Hand
-from my_client import Client
+from client import Client
 
 image_type = type(pygame.image)
 Game_status_type = Game_status_type

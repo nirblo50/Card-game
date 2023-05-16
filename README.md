@@ -1,6 +1,6 @@
 # Python Online Card Game
 
-   <img src="user_stuff/assets/card_game.gif" height="280">
+   <img src="assets/card_game.gif" height="280">
 
 
 ##  About this project
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ### Running The App
 
 ```bash
-To play online (If Linode server still runs) - player_gui.py
+To play online (If Linode server still runs) - player.py
 
-To play on local Network, first run my_server.py and than python player_gui.py
+To play on local Network, first run server.py and than python player.py
 ```
