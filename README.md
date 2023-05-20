@@ -25,8 +25,8 @@ so there is minimal user interface and graphics.
 
 Make sure you have Python version of 3.9 or above installed.  
 1. use git clone to clone this repository.  
-2. first run the my_server.py file.  
-3. after the serever is up and running, run the player_gui.py file for each player.
+2. first run the server.py file.  
+3. after the serever is up and running, run the player.py file for each player.
 
 ```bash
 pip install -r requirements.txt
