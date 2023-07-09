@@ -35,7 +35,5 @@ pip install -r requirements.txt
 ### Running The App
 
 ```bash
-To play online (If Linode server still runs) - player.py
-
 To play on local Network, first run server.py and than python player.py
 ```
